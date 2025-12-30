@@ -17,7 +17,7 @@ This platform allows users to **write, publish, edit, and manage blogs**, while 
 
 ### Create Blog
 
-![Create Blog](screenshots/create-blog.png)
+![Create Blog](Screenshots/create-blog.png)
 
 ### Blog Detail Page
 
