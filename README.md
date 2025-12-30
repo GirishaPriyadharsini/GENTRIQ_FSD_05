@@ -9,11 +9,11 @@ This platform allows users to **write, publish, edit, and manage blogs**, while 
 
 ### Home / Public Feed
 
-![Home Page](screenshots/home.png)
+![Home Page](Screenshots/home.png)
 
 ### User Dashboard
 
-![Dashboard Page](screenshots/dashboard.png)
+![Dashboard Page](Screenshots/dashboard.png)
 
 ### Create Blog
 
@@ -21,11 +21,11 @@ This platform allows users to **write, publish, edit, and manage blogs**, while 
 
 ### Blog Detail Page
 
-![Blog Detail](screenshots/blog-detail.png)
+![Blog Detail](Screenshots/blog-detail.png)
 
 ### Edit Blog
 
-![Edit Blog](screenshots/edit-blog.png)
+![Edit Blog](Screenshots/edit-blog.png)
 
 ---
 
