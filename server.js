@@ -94,8 +94,6 @@ app.post('/api/register', async (req, res) => {
         
         // Hash password
         const hashedPassword = await bcrypt.hash(password, 10);
-        
-        // Insert user
         const [result] = await pool.execute(
             'INSERT INTO users (username, email, password) VALUES (?, ?, ?)',
             [username, email, hashedPassword]
@@ -130,8 +128,6 @@ app.post('/api/login', async (req, res) => {
         if (!validPassword) {
             return res.status(401).json({ error: 'Invalid credentials' });
         }
-        
-        // Generate JWT token
         const token = jwt.sign(
             { id: user.id, username: user.username, email: user.email },
             JWT_SECRET,
@@ -309,7 +305,6 @@ app.put('/api/blogs/:id', authenticateToken, upload.single('image'), async (req,
             }
             imageUrl = `/uploads/${req.file.filename}`;
         }
-        // If removeImage flag is set (sent as string 'true')
         else if (req.body.removeImage === 'true') {
             console.log('Removing existing image');
             // Delete old image if exists
@@ -454,12 +449,9 @@ app.get('/api/blogs/:id/like-status', authenticateToken, async (req, res) => {
     }
 });
 
-// Serve create-blog.html
 app.get('/create-blog.html', (req, res) => {
     res.sendFile(path.join(__dirname, 'create-blog.html'));
 });
-
-// Error handling for multer
 app.use((err, req, res, next) => {
     if (err instanceof multer.MulterError) {
         console.error('Multer error:', err);
@@ -473,4 +465,5 @@ app.use((err, req, res, next) => {
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
+
 });
